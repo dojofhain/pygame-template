@@ -1,1 +1,1 @@
-# pygame-template
+## Ein einfaches Template für ein pygame Spiel
