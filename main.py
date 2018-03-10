@@ -12,7 +12,7 @@ GRUEN = (0, 255, 0)
 
 # andere Konstanten
 KREIS_RADIUS = 20
-
+SCHRITT_WEITE = 5
 
 class MeinSpiel(Game):
 
@@ -45,7 +45,7 @@ class MeinSpiel(Game):
         self.draw_rect(rect=self.rechteck, color=WEISS)
 
         # bewege den Kreis
-        self.kreis_x += 1
+        self.kreis_x += SCHRITT_WEITE
         if self.kreis_x > BREITE + KREIS_RADIUS:
             self.kreis_x = -KREIS_RADIUS
 
@@ -59,10 +59,10 @@ class MeinSpiel(Game):
     def keys_pressed(self, keys):
         # Wenn die 'Pfeil nach links'-Taste gedückt wird, bewegen wir das Rechteck nach links
         if keys[pygame.K_LEFT]:
-            self.rechteck.x -= 1
+            self.rechteck.x -= SCHRITT_WEITE
         # Wenn die 'Pfeil nach rechts'-Taste gedückt wird, bewegen wir das Rechteck nach rechts
         elif keys[pygame.K_RIGHT]:
-            self.rechteck.x += 1
+            self.rechteck.x += SCHRITT_WEITE
 
 
 meinSpiel = MeinSpiel()  # das Spiel wird erzeugt

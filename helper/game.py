@@ -43,6 +43,7 @@ class Game(object):
             self.screen.fill((0, 0, 0))
             self.update()
             pygame.display.flip()
+            pygame.time.Clock().tick(60)
 
     def __get_font(self, size):
         font = self.fonts.get(size)
